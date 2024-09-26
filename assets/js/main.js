@@ -7,7 +7,4 @@ document.addEventListener("DOMContentLoaded", function () {
 // Beispiel: Event-Listener für Benutzeraktionen
 const navLinks = document.querySelectorAll('.nav-menu li a');
 navLinks.forEach(link => {
-    link.addEventListener('click', function () {
-        alert("Sie haben auf einen Menüpunkt geklickt.");
-    });
 });

@@ -1,12 +1,21 @@
-/* Grundlegende Stile */
-body {
-    font-family: 'Arial', sans-serif;
+/* Globale Einstellungen */
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Verhindert, dass Padding/Borders die Gesamtbreite vergrößern */
+    overflow-x: hidden; /* Verhindert horizontales Scrollen */
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Stapelt Header, Main und Footer vertikal */
+    font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     color: #333;
 }
 
+/* Header */
 header {
     background-color: #333;
     color: #fff;
@@ -15,15 +24,21 @@ header {
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Navigation in der Mitte */
     align-items: center;
     padding: 0 20px;
+}
+
+.logo {
+    margin-right: 30px; /* Abstand zwischen Logo und Navigation */
 }
 
 .nav-menu {
     list-style: none;
     display: flex;
     gap: 15px;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-menu li a {
@@ -32,23 +47,147 @@ header {
     font-size: 18px;
 }
 
+.nav-menu li a:hover {
+    text-decoration: underline; /* Unterstreicht Links beim Hover */
+}
+
+/* Hero-Bereich */
 .hero {
     text-align: center;
     padding: 100px 20px;
     background-color: #e2e2e2;
 }
 
-/* Flexbox für responsive Features */
+.hero h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.hero p {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+/* Hauptinhalt - Features */
 .features {
     display: flex;
     justify-content: space-around;
     padding: 20px;
+    flex-wrap: wrap; /* Erlaubt Zeilenumbruch */
 }
 
-/* Responsivität */
+.feature-item {
+    text-align: center;
+    flex-basis: 45%; /* Basisbreite für Flexbox-Elemente */
+    margin: 10px 0;
+}
+
+.feature-item i {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.feature-item h3 {
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+.feature-item p {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Flexbox für responsives Design */
 @media (max-width: 768px) {
     .features {
         flex-direction: column;
-        align-items: center;
+        align-items: center; /* Zentriert die Features auf kleinen Bildschirmen */
+    }
+}
+
+/* Sticky Footer */
+main {
+    flex: 1; /* Nimmt den verbleibenden Platz zwischen Header und Footer ein */
+}
+
+/* Footer-Stile */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+    width: 100%; /* Stellt sicher, dass der Footer die volle Breite des Bildschirms einnimmt */
+    box-sizing: border-box; /* Padding wird zur Breite addiert */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Abstand zwischen den Sektionen */
+    flex-wrap: wrap; /* Erlaubt Zeilenumbruch */
+    max-width: 1200px; /* Maximale Breite für große Bildschirme */
+    margin: 0 auto; /* Zentriert den Footer-Inhalt */
+    width: 100%; /* Stellt sicher, dass der Footer-Inhalt auch 100% der verfügbaren Breite nutzt */
+}
+
+.footer-section {
+    flex: 1; /* Flexibilität der Sektionen */
+    padding: 10px; /* Innenabstand */
+    min-width: 200px; /* Verhindert, dass die Sektionen zu schmal werden */
+}
+
+.footer-section h3 {
+    margin-bottom: 15px; /* Abstand unter den Überschriften */
+}
+
+.footer-section p,
+.footer-section ul {
+    margin: 0; /* Entfernt Margins */
+    padding: 0; /* Entfernt Padding */
+}
+
+.footer-section ul {
+    list-style: none; /* Entfernt Aufzählungszeichen */
+}
+
+.footer-section ul li {
+    margin-bottom: 10px; /* Abstand zwischen den Listenelementen */
+}
+
+.footer-section ul li a {
+    color: white; /* Linkfarbe */
+    text-decoration: none; /* Keine Unterstreichung */
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline; /* Unterstreicht Links beim Hover */
+}
+
+.footer-section .social a {
+    color: white; /* Linkfarbe für soziale Medien */
+    font-size: 20px; /* Größe der sozialen Medien Icons */
+    margin-right: 15px; /* Abstand zwischen Icons */
+    text-decoration: none; /* Keine Unterstreichung */
+}
+
+.footer-section .social a:hover {
+    color: #ccc; /* Farbe beim Hover */
+}
+
+.footer-bottom {
+    text-align: center; /* Zentriert den Text */
+    margin-top: 50px; /* Abstand über dem Footer-Text */
+    border-top: 1px solid #444; /* Trennlinie über dem Footer-Text */
+    padding-top: 10px; /* Innenabstand über dem Footer-Text */
+    font-size: 14px; /* Schriftgröße des Fußzeilentextes */
+}
+
+/* Responsivität für kleinere Bildschirme */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stapelt Footer-Sektionen auf kleinen Bildschirmen */
+        text-align: center; /* Zentriert den Text */
+    }
+    .footer-section {
+        margin-bottom: 20px; /* Abstand zwischen den Sektionen */
     }
 }
