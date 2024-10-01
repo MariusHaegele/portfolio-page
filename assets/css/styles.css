@@ -1,85 +1,99 @@
-/* Globale Einstellungen */
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Verhindert, dass Padding/Borders die Gesamtbreite vergrößern */
-    overflow-x: hidden; /* Verhindert horizontales Scrollen */
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto; /* Nur vertikales Scrollen erlauben */
 }
 
 body {
-    display: flex;
-    flex-direction: column; /* Stapelt Header, Main und Footer vertikal */
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    padding-top: 100px; /* Die Höhe des Headers */
 }
 
-/* Header */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
+    background-color: #ffffff;
+    padding: 22px 0; /* Hier wird die Höhe des Headers bestimmt */
+    position: fixed; /* Header bleibt fixiert oben */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
 .navbar {
     display: flex;
-    justify-content: center; /* Navigation in der Mitte */
+    justify-content: space-between;
     align-items: center;
     padding: 0 20px;
 }
 
 .logo {
-    margin-right: 30px; /* Abstand zwischen Logo und Navigation */
+    margin-left: 10px;
+}
+
+.logo img {
+    width: 250px;
+    height: auto;
 }
 
 .nav-menu {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 100px;
     margin: 0;
     padding: 0;
+    flex: 1;
+    justify-content: center;
 }
 
 .nav-menu li a {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
-    font-size: 18px;
+    font-size: 25px;
 }
 
 .nav-menu li a:hover {
-    text-decoration: underline; /* Unterstreicht Links beim Hover */
+    text-decoration: underline;
 }
 
-/* Hero-Bereich */
 .hero {
+    position: relative;
     text-align: center;
-    padding: 100px 20px;
-    background-color: #e2e2e2;
+    color: white;
+    padding: 400px 20px; /* Oder passe an, um den Inhalt besser zu positionieren */
+    min-height: 400px;
+    margin-top: 0; /* Setze auf 0, um den Header nicht zu überlappen */
 }
 
-.hero h1 {
-    margin: 0;
-    font-size: 36px;
-}
-
+.hero h1,
 .hero p {
-    margin: 10px 0;
-    font-size: 18px;
+    position: relative;
+    z-index: 2;
 }
 
-/* Hauptinhalt - Features */
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
 .features {
     display: flex;
     justify-content: space-around;
-    padding: 20px;
-    flex-wrap: wrap; /* Erlaubt Zeilenumbruch */
+    padding: 40px 20px;
+    flex-wrap: wrap;
 }
 
 .feature-item {
     text-align: center;
-    flex-basis: 45%; /* Basisbreite für Flexbox-Elemente */
+    flex-basis: 45%;
     margin: 10px 0;
+    padding: 100px;
 }
 
 .feature-item i {
@@ -98,96 +112,92 @@ header {
     font-size: 16px;
 }
 
-/* Flexbox für responsives Design */
 @media (max-width: 768px) {
     .features {
         flex-direction: column;
-        align-items: center; /* Zentriert die Features auf kleinen Bildschirmen */
+        align-items: center;
     }
 }
 
-/* Sticky Footer */
 main {
-    flex: 1; /* Nimmt den verbleibenden Platz zwischen Header und Footer ein */
+    flex: 1;
 }
 
-/* Footer-Stile */
 footer {
     background-color: #333;
     color: white;
     padding: 40px 20px;
-    width: 100%; /* Stellt sicher, dass der Footer die volle Breite des Bildschirms einnimmt */
-    box-sizing: border-box; /* Padding wird zur Breite addiert */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .footer-container {
     display: flex;
-    justify-content: space-between; /* Abstand zwischen den Sektionen */
-    flex-wrap: wrap; /* Erlaubt Zeilenumbruch */
-    max-width: 1200px; /* Maximale Breite für große Bildschirme */
-    margin: 0 auto; /* Zentriert den Footer-Inhalt */
-    width: 100%; /* Stellt sicher, dass der Footer-Inhalt auch 100% der verfügbaren Breite nutzt */
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .footer-section {
-    flex: 1; /* Flexibilität der Sektionen */
-    padding: 10px; /* Innenabstand */
-    min-width: 200px; /* Verhindert, dass die Sektionen zu schmal werden */
+    flex: 1;
+    padding: 10px;
+    min-width: 200px;
 }
 
 .footer-section h3 {
-    margin-bottom: 15px; /* Abstand unter den Überschriften */
+    margin-bottom: 15px;
 }
 
 .footer-section p,
 .footer-section ul {
-    margin: 0; /* Entfernt Margins */
-    padding: 0; /* Entfernt Padding */
+    margin: 0;
+    padding: 0;
 }
 
 .footer-section ul {
-    list-style: none; /* Entfernt Aufzählungszeichen */
+    list-style: none;
 }
 
 .footer-section ul li {
-    margin-bottom: 10px; /* Abstand zwischen den Listenelementen */
+    margin-bottom: 10px;
 }
 
 .footer-section ul li a {
-    color: white; /* Linkfarbe */
-    text-decoration: none; /* Keine Unterstreichung */
+    color: white;
+    text-decoration: none;
 }
 
 .footer-section ul li a:hover {
-    text-decoration: underline; /* Unterstreicht Links beim Hover */
+    text-decoration: underline;
 }
 
 .footer-section .social a {
-    color: white; /* Linkfarbe für soziale Medien */
-    font-size: 20px; /* Größe der sozialen Medien Icons */
-    margin-right: 15px; /* Abstand zwischen Icons */
-    text-decoration: none; /* Keine Unterstreichung */
+    color: white;
+    font-size: 20px;
+    margin-right: 15px;
+    text-decoration: none;
 }
 
 .footer-section .social a:hover {
-    color: #ccc; /* Farbe beim Hover */
+    color: #ccc;
 }
 
 .footer-bottom {
-    text-align: center; /* Zentriert den Text */
-    margin-top: 50px; /* Abstand über dem Footer-Text */
-    border-top: 1px solid #444; /* Trennlinie über dem Footer-Text */
-    padding-top: 10px; /* Innenabstand über dem Footer-Text */
-    font-size: 14px; /* Schriftgröße des Fußzeilentextes */
+    text-align: center;
+    margin-top: 50px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    font-size: 14px;
 }
 
-/* Responsivität für kleinere Bildschirme */
 @media (max-width: 768px) {
     .footer-container {
-        flex-direction: column; /* Stapelt Footer-Sektionen auf kleinen Bildschirmen */
-        text-align: center; /* Zentriert den Text */
+        flex-direction: column;
+        text-align: center;
     }
     .footer-section {
-        margin-bottom: 20px; /* Abstand zwischen den Sektionen */
+        margin-bottom: 20px;
     }
 }
