@@ -1,23 +1,22 @@
-#services_section{
+#skill_section {
     padding: 100px 0;
     background-color: var(--light-secondary-color);
     display: flex;
-    justify-content: center;
-    align-items: center;
     gap: 100px;
     flex-wrap: wrap-reverse;
 }
 
-.services_container{
+.skill_bar_container {
     width: 750px;
     max-width: 90%;
+    margin-left: 180px;
 }
 
-.services_container h2{
+.skill_bar_container h2 {
     font-size: 80px;
 }
 
-.services_container p{
+.skill_bar_container p {
     text-align: justify;
     line-height: 175%;
 }
@@ -28,32 +27,87 @@
     border-radius: 30px;
 }
   
-.skills{
+.skills {
     text-align: right;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 20px;
     color: var(--text-color);
     border-radius: 30px;
+    width: 0%; /* Initial width set to 0% */
+    visibility: hidden; /* Initially hidden */
+    transition: visibility 0s linear 0.5s, width 0.5s; /* Delay visibility change */
 }
-  
-.html{
-    width: 50%; 
+
+.html {
     background-color: var(--main-brand-color);
 }
 
-.css{
-    width: 80%; 
+.css {
     background-color: var(--main-brand-color);
 }
 
-.js{
-    width: 65%; 
+.js {
     background-color: var(--main-brand-color);
 }
 
-.php{
-    width: 60%; 
+.php {
     background-color: var(--main-brand-color);
 }
 
+
+@keyframes html{
+    0%{
+        width:0%;
+    }
+    80%{
+        width:50%;
+    }
+}
+
+@keyframes css{
+    0%{
+        width:0%;
+    }
+    80%{
+        width:80%;
+    }
+}
+
+@keyframes js{
+    0%{
+        width:0%;
+    }
+    80%{
+        width:65%;
+    }
+}
+
+@keyframes php{
+    0%{
+        width:0%;
+    }
+    80%{
+        width:60%;
+    }
+}
+
+.animate {
+    animation: none;
+}
+
+.html.animate {
+    animation: html 2s forwards;
+}
+
+.css.animate {
+    animation: css 2s forwards;
+}
+
+.js.animate {
+    animation: js 2s forwards;
+}
+
+.php.animate {
+    animation: php 2s forwards;
+}
