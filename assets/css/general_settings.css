@@ -45,3 +45,28 @@ h1{
 html{
     scroll-behavior: smooth;
 }
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    z-index: 99;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: var(--main-brand-color);
+    color: white;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+#myBtn img {
+    width: 50%;
+    height: 50%;
+}
+
+#myBtn:hover {
+    background-color: #555;
+}
