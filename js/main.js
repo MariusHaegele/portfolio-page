@@ -1,28 +1,25 @@
 // Project Data
 const projects = [
     {
-        title: 'E-Commerce Platform',
-        description: 'Ein moderner Online-Shop mit HTML, CSS und JavaScript',
-        image: 'https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3',
-        tech: ['HTML', 'CSS', 'JavaScript'],
-        github: 'https://github.com',
-        live: 'https://example.com'
+        title: 'Microservice-Architektur',
+        description: 'Datenaufteilung in einer Microservice-Architektur',
+        image: 'assets/Microservice-Architektur.jpg',
+        tech: ['Python, ', 'Docker, ', 'FaaS'],
+        github: 'https://github.com/MariusHaegele/SDA2-Assignment-1'
     },
     {
-        title: 'Portfolio Website',
-        description: 'Responsive Portfolio mit modernem Design',
-        image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3',
-        tech: ['HTML', 'CSS', 'JavaScript'],
-        github: 'https://github.com',
-        live: 'https://example.com'
+        title: 'Textverarbeitungs-Tool',
+        description: 'Textverarbeitungs-Tool basierend auf einer Mikrokernel-Architektur',
+        image: 'assets/Textverarbeitungs-Tool.jpg',
+        tech: ['Python, ', 'Docker'],
+        github: 'https://github.com/MariusHaegele/SDA2-Assignment-2'
     },
     {
-        title: 'Task Management App',
-        description: 'Eine Produktivitäts-App mit lokalem Storage',
-        image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3',
-        tech: ['HTML', 'CSS', 'JavaScript'],
-        github: 'https://github.com',
-        live: 'https://example.com'
+        title: 'Authentifizierungsmethoden',
+        description: 'Beispiel von Authentifizierungsmethoden wie JWT und Basis-Authentifizierung',
+        image: 'assets/Authentifizierungsmethoden.jpg',
+        tech: ['Python, ', 'Docker'],
+        github: 'https://github.com/MariusHaegele/SDA4-Assignment-2'
     }
 ];
 
@@ -79,9 +76,6 @@ function loadProjects() {
                 <div class="project-links">
                     <a href="${project.github}" class="project-link" target="_blank" rel="noopener noreferrer">
                         <i class="icon-github"></i> GitHub
-                    </a>
-                    <a href="${project.live}" class="project-link" target="_blank" rel="noopener noreferrer">
-                        <i class="icon-external-link"></i> Live Demo
                     </a>
                 </div>
             </div>
