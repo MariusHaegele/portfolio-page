@@ -75,7 +75,7 @@ function loadProjects() {
                 </div>
                 <div class="project-links">
                     <a href="${project.github}" class="project-link" target="_blank" rel="noopener noreferrer">
-                        <i class="icon-github"></i> GitHub
+                        <i class="icon-github"></i> Zum Repository
                     </a>
                 </div>
             </div>
@@ -86,16 +86,21 @@ function loadProjects() {
 }
 
 // Contact Form Handling
+emailjs.init('Vd30MxCkwevcHL8SC');
 const contactForm = document.getElementById('contact-form');
 
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    
-    // Hier würde normalerweise die Formularverarbeitung stattfinden
-    const formData = new FormData(contactForm);
-    console.log('Form submitted:', Object.fromEntries(formData));
-    
-    // Bestätigungsnachricht
-    alert('Vielen Dank für Ihre Nachricht! Ich werde mich bald bei Ihnen melden.');
-    contactForm.reset();
+
+    const serviceID = 'service_tpbrep8';
+    const templateID = 'template_70xkiup';
+
+    emailjs.sendForm(serviceID, templateID, contactForm)
+        .then(() => {
+            alert('Nachricht erfolgreich gesendet!');
+            contactForm.reset();
+        }, (err) => {
+            console.error('Fehler:', err);
+            alert('Nachricht konnte nicht gesendet werden. Fehler: ' + JSON.stringify(err));
+        });
 });

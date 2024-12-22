@@ -70,9 +70,27 @@
             <div class="container">
                 <h2>Meine Fähigkeiten</h2>
                 <div class="skills-grid">
-                    <div class="skill-card" data-skill="60">
+                    <div class="skill-card" data-skill="80">
                         <div class="skill-info">
                             <h3>HTML/CSS</h3>
+                            <span class="skill-percentage">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card" data-skill="40">
+                        <div class="skill-info">
+                            <h3>JavaScript</h3>
+                            <span class="skill-percentage">40%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card" data-skill="60">
+                        <div class="skill-info">
+                            <h3>Python</h3>
                             <span class="skill-percentage">60%</span>
                         </div>
                         <div class="skill-bar">
@@ -81,17 +99,17 @@
                     </div>
                     <div class="skill-card" data-skill="80">
                         <div class="skill-info">
-                            <h3>Figma</h3>
+                            <h3>Docker</h3>
                             <span class="skill-percentage">80%</span>
                         </div>
                         <div class="skill-bar">
                             <div class="skill-progress"></div>
                         </div>
                     </div>
-                    <div class="skill-card" data-skill="50">
+                    <div class="skill-card" data-skill="90">
                         <div class="skill-info">
-                            <h3>Python</h3>
-                            <span class="skill-percentage">50%</span>
+                            <h3>Figma</h3>
+                            <span class="skill-percentage">90%</span>
                         </div>
                         <div class="skill-bar">
                             <div class="skill-progress"></div>
@@ -100,7 +118,7 @@
                 </div>
             </div>
         </section>
-
+ 
         <section id="projects" class="projects">
             <div class="container">
                 <h2>Meine Projekte</h2>
@@ -116,11 +134,11 @@
                     <form id="contact-form" class="contact-form">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" name="from_name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="from_email" required>
                         </div>
                         <div class="form-group">
                             <label for="message">Nachricht</label>
@@ -131,7 +149,7 @@
                     <div class="contact-info">
                         <div class="contact-item">
                             <i class="icon-mail"></i>
-                            <a href="mailto:kontakt@example.com">kontakt@example.com</a>
+                            <a href="mailto:kontakt@example.com">marius.haegele@students.bfh.ch</a>
                         </div>
                         <div class="contact-item">
                             <i class="icon-phone"></i>
@@ -169,6 +187,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/animation.js"></script>
     <script>loadProjects();</script>
