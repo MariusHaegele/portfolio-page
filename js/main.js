@@ -104,3 +104,17 @@ contactForm.addEventListener('submit', (e) => {
             alert('Nachricht konnte nicht gesendet werden. Fehler: ' + JSON.stringify(err));
         });
 });
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    var map = L.map('map').setView([46.942296, 7.441118], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    L.marker([46.942296, 7.441118]).addTo(map)
+        .bindPopup('Mein Standort in Bern.')
+        .openPopup();
+});
