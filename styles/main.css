@@ -125,7 +125,7 @@ body {
 /* About Section */
 .about {
     padding: 5rem 0;
-    background: var(--light-gray);
+    background: var(--white);
 }
 
 .about-grid {
@@ -155,11 +155,10 @@ body {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Eine Spalte */
-    gap: 2rem; /* Abstand zwischen den Elementen */
+    grid-template-columns: 1fr;
+    gap: 2rem;
     margin-top: 3rem;
 }
-
 
 .skill-card {
     background: var(--white);
@@ -328,4 +327,100 @@ body {
     text-align: center;
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Timeline Section */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.timeline-section {
+    padding: 5rem 0;
+    background: var(--light-gray);
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: #e5e7eb;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 48px;
+    width: 100%;
+}
+
+.timeline-content {
+    position: relative;
+    width: calc(50% - 40px);
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-right: auto;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: auto;
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background: white;
+    border: 4px solid #3b82f6;
+    border-radius: 50%;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-year {
+    font-weight: 600;
+    color: #3b82f6;
+    margin-bottom: 8px;
+}
+
+.timeline-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.timeline-description {
+    color: #4b5563;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    border: 10px solid transparent;
+    top: 20px;
+}
+
+.timeline-item:nth-child(odd) .timeline-content::before {
+    right: -20px;
+    border-left-color: white;
+}
+
+.timeline-item:nth-child(even) .timeline-content::before {
+    left: -20px;
+    border-right-color: white;
 }
